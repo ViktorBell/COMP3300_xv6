@@ -75,6 +75,10 @@ runcmd(struct cmd *cmd)
     ecmd = (struct execcmd*)cmd;
     if(ecmd->argv[0] == 0)
       exit();
+    if(strcmp(ecmd->argv[0], "whoami") == 0){
+      printf(1, "Good Question...\nI think therefore I am...but that only makes me am, not where, when, and definitely not who...\nMaybe this whole thing is just a simulation, maybe I'm in control...So that would make me...God.\nYep that's probably it.\nBut I'm clearly just really bad at it which is why the world is so F'd up. My bad :(\n");
+      break;
+    }
     exec(ecmd->argv[0], ecmd->argv);
     printf(2, "exec %s failed\n", ecmd->argv[0]);
     break;
